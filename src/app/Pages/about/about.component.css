@@ -1,0 +1,21 @@
+.size{
+    width:80%;
+    height:70%;
+    margin-top: 15%;
+}
+
+.bginfo{
+    margin-top: -2.5%;
+}
+
+.info{
+    text-align: center;
+    color: white;
+    font-size: large;
+    padding: 4%;
+}
+
+.underline{
+    text-decoration: none;
+    color:white;
+  }
