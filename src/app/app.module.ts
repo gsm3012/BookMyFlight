@@ -20,6 +20,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import{ReactiveFormsModule} from '@angular/forms';
+import { UserdashboardComponent } from './Pages/userdashboard/userdashboard.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import{ReactiveFormsModule} from '@angular/forms';
     RegisterComponent,
     LoginComponent,
     AboutComponent,
+    UserdashboardComponent,
   ],
   imports: [
     BrowserModule,

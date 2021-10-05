@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './Pages/about/about.component';
 import { LoginComponent } from './Pages/login/login.component';
 import { RegisterComponent } from './Pages/register/register.component';
+import { UserdashboardComponent } from './Pages/userdashboard/userdashboard.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/about', pathMatch: 'full'},
@@ -12,6 +13,8 @@ const routes: Routes = [
   {path:'registration', component:RegisterComponent, pathMatch:'full'},
 
   {path:'login', component:LoginComponent, pathMatch:'full',},
+
+  {path:'api/v1.0/user/flight/search', component:UserdashboardComponent, pathMatch:'full'},
 
 ];
 
