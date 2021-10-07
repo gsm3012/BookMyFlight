@@ -12,25 +12,23 @@
     <div class="row mt-4">
         <div class="col-6 offset-3">
             <mat-card class="shadow">
-                <form action="">
+                <form [formGroup]="Search" (ngSubmit)="searchFlight()">
 
                     <mat-form-field appearance="legacy"  class="fullwidtth">
                         <mat-label>To Place</mat-label>
-                        <input name="flightToPlace"
+                        <input name="to" formControlName="to"
                         matInput placeholder="To Place">
                     </mat-form-field>
 
                     <mat-form-field appearance="legacy" class="fullwidtth">
                         <mat-label>From Place</mat-label>
-                        <input name="flightFromPlace"
+                        <input name="from" formControlName="from"
                         matInput placeholder="Form Place">
                     </mat-form-field>
     
                     <mat-form-field appearance="legacy" class="fullwidtth">
                         <mat-label>journey Date</mat-label>
-                        <input name="flightDate" type="date" formControlName="journeydate"
-                        [(bsValue)]="journeydate"
-                        value="{{journeydate | date:'yyyy-mm-dd'}}" 
+                        <input name="bookingDate" type="date" formControlName="bookingDate"
                         matInput placeholder="journey Date">
                     </mat-form-field>
                 <hr>
