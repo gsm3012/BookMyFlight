@@ -2,6 +2,9 @@
     <div class="row">
         <div class="col-6 offset-3">
             <marquee direction="right"><mat-icon>flight_takeoff</mat-icon></marquee>
+            <div class="text-danger">
+                <hr>
+            </div>
             <h2>Search Your Flight</h2>
         </div>
     </div>
@@ -25,19 +28,15 @@
     
                     <mat-form-field appearance="legacy" class="fullwidtth">
                         <mat-label>journey Date</mat-label>
-                        <input name="flightDate" type="date"
+                        <input name="flightDate" type="date" formControlName="journeydate"
+                        [(bsValue)]="journeydate"
+                        value="{{journeydate | date:'yyyy-mm-dd'}}" 
                         matInput placeholder="journey Date">
-                    </mat-form-field>
-                    
-                    <mat-form-field appearance="legacy" class="fullwidtth">
-                        <mat-label>journey Time</mat-label>
-                        <input name="flightTime" type="time"
-                        matInput placeholder="journey Time">
                     </mat-form-field>
                 <hr>
                     <div>
-                        <button type="submit" mat-raised-button class="underline mr-2 bg-dark text-white fullwidtth">Search</button>
-                        <button type="reset" mat-raised-button class="underline text-dark ml-2 fullwidtth">Cancel</button>
+                        <button type="submit" mat-raised-button class="underline mb-1 bg-dark text-white fullwidtth">Search</button>
+                        <button type="reset" mat-raised-button class="underline mt-1 text-dark fullwidtth">Cancel</button>
                     </div>
     
 
