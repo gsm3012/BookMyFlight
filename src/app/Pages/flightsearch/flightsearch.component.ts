@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormControl, FormGroup} from '@angular/forms';
+import { FlightsearchServiceService } from 'src/app/Services/flightsearch-service.service';
 
 @Component({
   selector: 'app-flightsearch',
@@ -8,16 +9,28 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 })
 export class flightsearchComponent implements OnInit {
 
-  constructor() { }
+  constructor(private find:FlightsearchServiceService) { }
 
   ngOnInit(): void {
   }
 
-  registerForm = new FormGroup({
-    userName : new FormControl('', [Validators.required, Validators.pattern('[A-Z][a-zA-Z]+[ ]?[a-zA-Z]+[ ]?[a-zA-Z]+[ ]?[a-zA-Z]+')]),
-    userEmail : new FormControl('', [Validators.required, Validators.email]),
-    userMobile : new FormControl('', [Validators.required, Validators.pattern('[0-9]{10}')]),
-    userPassword : new FormControl('', [Validators.required, Validators.minLength(8)]),
-  })
+  search = new FormGroup({
+    toPlace : new FormControl(''),
+    fromPlace : new FormControl(''),
+    flightDate : new FormControl(''),
+    returnDate : new FormControl('')
+  });
+
+searchFlight()
+{
+  this.find.findFlight(this.search.value).subscribe((data)=>{
+    console.log(data);
+  alert("success");
+},
+(error)=>{
+  console.log(error);
+});
+}
+
 
 }

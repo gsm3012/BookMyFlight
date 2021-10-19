@@ -21,6 +21,19 @@ import { HttpClientModule } from '@angular/common/http';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import{ReactiveFormsModule} from '@angular/forms';
 import { flightsearchComponent } from './Pages/flightsearch/flightsearch.component';
+import {MatRadioModule, MAT_RADIO_DEFAULT_OPTIONS} from '@angular/material/radio';
+import { AddflightComponent } from './Pages/admin/addflight/addflight.component';
+import {MatSelectModule} from '@angular/material/select';
+import { ScheduleflightComponent } from './Pages/admin/scheduleflight/scheduleflight.component';
+import { AdminsidebarComponent } from './Pages/admin/adminsidebar/adminsidebar.component';
+import {MatListModule} from '@angular/material/list';
+import { ViewscheduleflightComponent } from './Pages/admin/viewscheduleflight/viewscheduleflight.component';
+import { ViewflightComponent } from './Pages/admin/viewflight/viewflight.component';
+import { AllflightsComponent } from './Pages/admin/allflights/allflights.component';
+import { AllscheduleflightsComponent } from './Pages/admin/allscheduleflights/allscheduleflights.component';
+import { UpdateflightComponent } from './Pages/admin/updateflight/updateflight.component';
+import { UpdatescheduleflightComponent } from './Pages/admin/updatescheduleflight/updatescheduleflight.component';
+import { FindingComponent } from './Pages/finding/finding.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +43,16 @@ import { flightsearchComponent } from './Pages/flightsearch/flightsearch.compone
     LoginComponent,
     AboutComponent,
     flightsearchComponent,
+    AddflightComponent,
+    ScheduleflightComponent,
+    AdminsidebarComponent,
+    ViewscheduleflightComponent,
+    ViewflightComponent,
+    AllflightsComponent,
+    AllscheduleflightsComponent,
+    UpdateflightComponent,
+    UpdatescheduleflightComponent,
+    FindingComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +69,16 @@ import { flightsearchComponent } from './Pages/flightsearch/flightsearch.compone
     FormsModule,
     HttpClientModule,
     MatSnackBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatRadioModule,
+    MatSelectModule,
+    MatListModule
   ],
-  providers: [],
+  providers: [
+    {
+    provide: MAT_RADIO_DEFAULT_OPTIONS,
+    useValue: { color: 'warn' },}
+],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
